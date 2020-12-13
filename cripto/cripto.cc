@@ -8,6 +8,8 @@
  * @date 12/12/2020
  * @brief Desarrolle en C++ un programa cripto.cc cuya finalidad será 
  * encriptar y/o desencriptar ficheros de texto.
+ * @bug Cuando le pasas (queriendo o sin querer) una palabra clave al cifrado cesar 
+ * genera un core, puesto que cesar requiere un número.
  */
 #include <iostream>
 #include <string>
@@ -16,7 +18,6 @@
 #include "funciones_cripto.h"
 
 int main(int argc, char* argv[]){
-
 Parametros(argc,argv);
 
 std::ifstream archivo_entrada(argv[1], std::ifstream::in);
@@ -35,16 +36,20 @@ if(cifrado == "xor" && modo == "+" || cifrado == "xor" && modo == "-"){
   archivo_salida << EncriptXor(mensaje, clave);
   archivo_salida.close();
 }
-
 if(cifrado == "cesar" && modo == "+"){
   int k_cesar{stoi(clave)};
   archivo_salida << EncriptCesar(mensaje,k_cesar);
+  archivo_salida.close();
 }
-
 if(cifrado == "cesar" && modo == "-"){
   int k_cesar{stoi(clave)};
   archivo_salida << EncriptCesar(mensaje,-k_cesar);
+  archivo_salida.close();
 }
- 
+if(cifrado != "xor" || cifrado == "cesar"){
+  std::cout << argv[0] << " Modo de uso: ./cripto fichero_entrada fichero_salida método password operación" << std::endl;
+  std::cout << "Pruebe " << argv[0] << " --help para más información" << std::endl;
+  exit(EXIT_SUCCESS);
+}
   return 0;
 }

@@ -4,7 +4,7 @@
 # Informática Básica
 #
 # @author Iván Texenery Díaz García
-# @date 2 dic 2020
+# @date 12/12/2020
 # @brief Makefile
 # 
 
