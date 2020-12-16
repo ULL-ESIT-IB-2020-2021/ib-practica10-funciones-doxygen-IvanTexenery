@@ -71,3 +71,17 @@ std::string EncriptCesar(std::string cadena_a_encriptar, int k_encriptar){
   }
   return cadena_a_encriptar;
 }
+
+/**
+ * Comprueba si la string es un número entero.
+ * @param Cadena para comprobar si es un entero.
+ * @return False o True dependiendo de si es un entero o no.
+ */
+bool EsEntero(std::string cadena) {
+  for(auto elemento: cadena)
+  {
+    if(elemento < 48 || elemento > 57)
+      return false;
+  }
+  return true;
+} 

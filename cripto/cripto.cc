@@ -37,16 +37,30 @@ if(cifrado == "xor" && modo == "+" || cifrado == "xor" && modo == "-"){
   archivo_salida.close();
 }
 if(cifrado == "cesar" && modo == "+"){
-  int k_cesar{stoi(clave)};
-  archivo_salida << EncriptCesar(mensaje,k_cesar);
-  archivo_salida.close();
+  if(EsEntero(clave) == false){
+    std::cout << argv[0] << " Modo de uso: ./cripto fichero_entrada fichero_salida método password operación" << std::endl;
+    std::cout << "Pruebe " << argv[0] << " --help para más información" << std::endl;
+    exit(EXIT_SUCCESS);
+  }
+  else{
+    int k_cesar{stoi(clave)};
+    archivo_salida << EncriptCesar(mensaje,k_cesar);
+    archivo_salida.close();
+  }
 }
 if(cifrado == "cesar" && modo == "-"){
-  int k_cesar{stoi(clave)};
-  archivo_salida << EncriptCesar(mensaje,-k_cesar);
-  archivo_salida.close();
+  if(EsEntero(clave) == false){
+    std::cout << argv[0] << " Modo de uso: ./cripto fichero_entrada fichero_salida método password operación" << std::endl;
+    std::cout << "Pruebe " << argv[0] << " --help para más información" << std::endl;
+    exit(EXIT_SUCCESS);
+  }
+  else{
+    int k_cesar{stoi(clave)};
+    archivo_salida << EncriptCesar(mensaje,-k_cesar);
+    archivo_salida.close();
+  }
 }
-if(cifrado != "xor" || cifrado == "cesar"){
+if(cifrado != "xor" || cifrado != "cesar"){
   std::cout << argv[0] << " Modo de uso: ./cripto fichero_entrada fichero_salida método password operación" << std::endl;
   std::cout << "Pruebe " << argv[0] << " --help para más información" << std::endl;
   exit(EXIT_SUCCESS);
