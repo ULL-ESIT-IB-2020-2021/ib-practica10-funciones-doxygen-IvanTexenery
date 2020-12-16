@@ -1,0 +1,209 @@
+\hypertarget{funciones__cripto_8h}{}\subsection{funciones\+\_\+cripto.\+h File Reference}
+\label{funciones__cripto_8h}\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado de Ingeniería Informática Informática Básica.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for funciones\+\_\+cripto.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{funciones__cripto_8h_af66e6324b74f86526391257df226f3fc}{Parametros} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Controla que los parámetros que se le pasan a la funcion main sean correctos. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{funciones__cripto_8h_a414e5d7fc156126d8d073fb9bc1e87ea}{Encript\+Xor} (std\+::string cadena\+\_\+a\+\_\+encriptar, std\+::string palabra\+\_\+clave)
+\begin{DoxyCompactList}\small\item\em Encripta o desencripta el mensaje que se le pasa por parámetro. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{funciones__cripto_8h_abe2ced4ca18340909f8289dfb8b32872}{Encript\+Cesar} (std\+::string cadena\+\_\+a\+\_\+encriptar, int k\+\_\+encriptar)
+\begin{DoxyCompactList}\small\item\em Encripta o desencripta el mensaje que se le pasa por parámetro. \end{DoxyCompactList}\item 
+bool \hyperlink{funciones__cripto_8h_adffe0e8948203cda4cf04bc1863e25d1}{Es\+Entero} (std\+::string cadena)
+\begin{DoxyCompactList}\small\item\em Comprueba si la string es un número entero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado de Ingeniería Informática Informática Básica. 
+
+\begin{DoxyAuthor}{Author}
+Iván Texenery Díaz García 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+12/12/2020 Declaraciones de funciones del programa principal. 
+\end{DoxyDate}
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{funciones__cripto_8h_abe2ced4ca18340909f8289dfb8b32872}\label{funciones__cripto_8h_abe2ced4ca18340909f8289dfb8b32872}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!Encript\+Cesar@{Encript\+Cesar}}
+\index{Encript\+Cesar@{Encript\+Cesar}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{Encript\+Cesar()}{EncriptCesar()}}
+{\footnotesize\ttfamily std\+::string Encript\+Cesar (\begin{DoxyParamCaption}\item[{std\+::string}]{cadena\+\_\+a\+\_\+encriptar,  }\item[{int}]{k\+\_\+encriptar }\end{DoxyParamCaption})}
+
+
+
+Encripta o desencripta el mensaje que se le pasa por parámetro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mensaje} & a encriptar mediante encriptado cesar y valor de k para cifrar el mensaje. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Mensaje inicial encriptado. 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+68                                                                      \{
+69   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i = 0; i < cadena\_a\_encriptar.length(); ++i)\{
+70     cadena\_a\_encriptar[i] += k\_encriptar;
+71   \}
+72   \textcolor{keywordflow}{return} cadena\_a\_encriptar;
+73 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{funciones__cripto_8h_a414e5d7fc156126d8d073fb9bc1e87ea}\label{funciones__cripto_8h_a414e5d7fc156126d8d073fb9bc1e87ea}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!Encript\+Xor@{Encript\+Xor}}
+\index{Encript\+Xor@{Encript\+Xor}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{Encript\+Xor()}{EncriptXor()}}
+{\footnotesize\ttfamily std\+::string Encript\+Xor (\begin{DoxyParamCaption}\item[{std\+::string}]{cadena\+\_\+a\+\_\+encriptar,  }\item[{std\+::string}]{palabra\+\_\+clave }\end{DoxyParamCaption})}
+
+
+
+Encripta o desencripta el mensaje que se le pasa por parámetro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mensaje} & a encriptar mediante xor y palabra clave para cifrar el mensaje. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Mensaje inicial encriptado. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+50                                                                            \{
+51   std::string cadena\_encriptada\{\textcolor{stringliteral}{""}\};
+52   std::string clave\_encriptada\{\textcolor{stringliteral}{""}\};
+53 
+54   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i = 0; i < palabra\_clave.length(); ++i)\{
+55     clave\_encriptada.push\_back(palabra\_clave[i] ^ (\textcolor{keywordtype}{char})128);
+56   \}
+57   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i = 0; i < cadena\_a\_encriptar.length(); ++i)\{
+58     cadena\_encriptada.push\_back(cadena\_a\_encriptar[i] ^ clave\_encriptada[i % clave\_encriptada.length()]);
+59   \} 
+60   \textcolor{keywordflow}{return} cadena\_encriptada;
+61 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{funciones__cripto_8h_adffe0e8948203cda4cf04bc1863e25d1}\label{funciones__cripto_8h_adffe0e8948203cda4cf04bc1863e25d1}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!Es\+Entero@{Es\+Entero}}
+\index{Es\+Entero@{Es\+Entero}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{Es\+Entero()}{EsEntero()}}
+{\footnotesize\ttfamily bool Es\+Entero (\begin{DoxyParamCaption}\item[{std\+::string}]{cadena }\end{DoxyParamCaption})}
+
+
+
+Comprueba si la string es un número entero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cadena} & para comprobar si es un entero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False o True dependiendo de si es un entero o no. 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+80                                 \{
+81   \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} elemento: cadena)
+82   \{
+83     \textcolor{keywordflow}{if}(elemento < 48 || elemento > 57)
+84       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+85   \}
+86   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+87 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{funciones__cripto_8h_af66e6324b74f86526391257df226f3fc}\label{funciones__cripto_8h_af66e6324b74f86526391257df226f3fc}} 
+\index{funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}!Parametros@{Parametros}}
+\index{Parametros@{Parametros}!funciones\+\_\+cripto.\+h@{funciones\+\_\+cripto.\+h}}
+\paragraph{\texorpdfstring{Parametros()}{Parametros()}}
+{\footnotesize\ttfamily void Parametros (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Controla que los parámetros que se le pasan a la funcion main sean correctos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cantidad} & de parámetros introducidos, array de caracteres con los argumentos introducidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file funciones\+\_\+cripto.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+21                                         \{
+22   \textcolor{keyword}{const} std::string kTextoAyuda = \textcolor{stringliteral}{"  Modo de uso: ./cripto fichero\_entrada fichero\_salida método password
+       operación\(\backslash\)n\(\backslash\)}
+23 \textcolor{stringliteral}{  fichero\_entrada: Fichero a codificar\(\backslash\)n\(\backslash\)}
+24 \textcolor{stringliteral}{  fichero\_salida:  Fichero codificado\(\backslash\)n\(\backslash\)}
+25 \textcolor{stringliteral}{  método:          Indica el método de encriptado\(\backslash\)n\(\backslash\)}
+26 \textcolor{stringliteral}{                   1: Cifrado xor(introducir 'xor')\(\backslash\)n\(\backslash\)}
+27 \textcolor{stringliteral}{                   2: Cifrado de César(introducir 'cesar') \(\backslash\)n\(\backslash\)}
+28 \textcolor{stringliteral}{  password:        Palabra secreta en el caso de método 1, Valor de K en el método 2\(\backslash\)n\(\backslash\)}
+29 \textcolor{stringliteral}{  operación:       Operación a realizar en el fichero\(\backslash\)n\(\backslash\)}
+30 \textcolor{stringliteral}{                   +: encriptar el fichero\(\backslash\)n\(\backslash\)}
+31 \textcolor{stringliteral}{                   -: desencriptar el fichero"};
+32                 
+33   std::string parametro\{argv[1]\};
+34   \textcolor{keywordflow}{if} (parametro == \textcolor{stringliteral}{"--help"}) \{
+35     std::cout << kTextoAyuda << std::endl;
+36     exit(EXIT\_SUCCESS);
+37   \}
+38   \textcolor{keywordflow}{if} (argc != 6) \{
+39     std::cout << argv[0] << \textcolor{stringliteral}{" Modo de uso: ./cripto fichero\_entrada fichero\_salida método password
+       operación"} << std::endl;
+40     std::cout << \textcolor{stringliteral}{"Pruebe "} << argv[0] << \textcolor{stringliteral}{" --help para más información"} << std::endl;
+41     exit(EXIT\_SUCCESS);
+42   \}
+43 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 5
