@@ -8,8 +8,6 @@
  * @date 12/12/2020
  * @brief Desarrolle en C++ un programa cripto.cc cuya finalidad será 
  * encriptar y/o desencriptar ficheros de texto.
- * @bug Cuando le pasas (queriendo o sin querer) una palabra clave al cifrado cesar 
- * genera un core, puesto que cesar requiere un número.
  */
 #include <iostream>
 #include <string>
