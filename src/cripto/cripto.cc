@@ -60,10 +60,13 @@ int main(int argc, char* argv[]){
       archivo_salida.close();
     }
   }
-  if(cifrado != "xor" || cifrado != "cesar"){
-    std::cout << argv[0] << " Modo de uso: ./cripto fichero_entrada fichero_salida método password operación" << std::endl;
-    std::cout << "Pruebe " << argv[0] << " --help para más información" << std::endl;
-    exit(EXIT_SUCCESS);
+  int contador_vocal{0};
+  for(auto caracter:mensaje){
+    if(caracter == 'A' || caracter == 'a'){
+      ++ contador_vocal;
+    }
   }
+
+  std::cout << "El fichero de entrada tiene " << contador_vocal << " a's." << std::endl;
   return 0;
 }
